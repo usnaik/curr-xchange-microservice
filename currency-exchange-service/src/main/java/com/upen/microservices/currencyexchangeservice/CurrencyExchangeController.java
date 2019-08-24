@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/currencyexchange/from")
+//@RequestMapping("/currencyexchange/from")
 public class CurrencyExchangeController {
 
 	@Autowired
@@ -20,7 +20,7 @@ public class CurrencyExchangeController {
 	private ExchangeValueRepository repository;
 	
 	
-	@GetMapping(("/{from}/to/{to}"))
+	@GetMapping(("/currencyexchange/from/{from}/to/{to}"))
 	public ExchangeValue retrieveExchangeValue(@PathVariable String from, @PathVariable String to) {		
 		ExchangeValue exchangeValue = 
 				repository.findByFromAndTo(from, to);
