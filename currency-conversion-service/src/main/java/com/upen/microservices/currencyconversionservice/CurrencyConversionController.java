@@ -13,7 +13,8 @@ public class CurrencyConversionController {
 
 	@Autowired
 	private CurrencyExchangeServiceProxy cxProxy;
-	
+
+// CALL USING REST TEMPLATE
 //	@GetMapping("/currency-converter/from/{from}/to/{to}/quantity/{quantity}")
 //	public CurrencyConversionBean converCurrency(
 //			@PathVariable String from, @PathVariable String to, 
@@ -35,6 +36,7 @@ public class CurrencyConversionController {
 //
 //	}
 
+	// CALL USING PROXY - FEIGN 
 	@GetMapping("/currency-converter-feign/from/{from}/to/{to}/quantity/{quantity}")
 	public CurrencyConversionBean converCurrencyFeign(
 			@PathVariable String from, @PathVariable String to, 
