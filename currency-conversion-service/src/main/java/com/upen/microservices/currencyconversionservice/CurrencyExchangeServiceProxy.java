@@ -6,10 +6,10 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+//NOTE Alternative to @RibbonClient - @LoadBalanced with REST Template 
+@RibbonClient(name="currency-exchange-service")
 //@FeignClient(name="currency-exchange-service")
 @FeignClient(name="netflix-zuul-api-gateway-server")
-@RibbonClient(name="currency-exchange-service")
-// NOTE @LoadBalanced can be used with REST Template instead of @RibbonClient
 public interface CurrencyExchangeServiceProxy {
 
 	//@GetMapping(("/currencyexchange/from/{from}/to/{to}"))
